@@ -120,7 +120,7 @@ export class UserAlbumMenu {
         let album = this.albumManagement.findByName(name);
         if (album) {
             for (let i = 0; i < album.song.length; i++) {
-                console.log(`ID: ${i + 1},Tên bài hát: ${album.song[i].name}\t Ca sĩ trình bày :${album.song[i].singer}\t Nhạc sĩ:${album.song[i].writer}\t Thể loại : ${album.song[i].type}\t Ngày phát hành:${album.song[i].debuttime}`);
+                console.log(`ID: ${i + 1},Tên bài hát: ${album.song[i].name}\t Ca sĩ trình bày :${album.song[i].singer}\t Nhạc sĩ:${album.song[i].writer}\t Thể loại : ${album.song[i].type}\t Ngày phát hành:${album.song[i].debutTime}`);
             }
         } else {
             console.log('-----Album không tồn tại!-----');

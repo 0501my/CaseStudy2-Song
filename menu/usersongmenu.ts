@@ -21,20 +21,20 @@ export class UserSongMenu{
             console.log('2. Thêm bài hát vào album')
             console.log('3. Xoá bài hát trong album')
             console.log('0.Thoat')
-            choice = +input.question('Enter choice :  ')
+            choice = +input.question(`\x1b[32m Enter choice : \x1b[0m `)
             switch (choice) {
                 case SongChoIse.SHOW_ALL_SONG:{
-                    console.log('-----Tât cả bài hát hiện có-----')
+                    console.log(`\x1b[1m-----Tất cả bài hát hiện có-----\x1b[0m`)
                     this.showAllSong();
                     break;
                 }
                 case SongChoIse.ADD_SONG_ALBUM:{
-                    console.log('-----Thêm bài hát vào album-----')
-                    this.addSongtoAlbum(currentUser)
+                    console.log(`\x1b[1m-----Thêm bài hát vào album-----\x1b[0m`)
+                    this.addSongToAlbum(currentUser)
                     break;
                 }
                 case SongChoIse.DELETE_ALBUMINOUS:{
-                    console.log('------Xoá bài hát trong album-----')
+                    console.log(`\x1b[32m ------Xoá bài hát trong album-----\x1b[0m`)
                     this.deleteSongFromAlbum();
                     break;
                 }
@@ -43,14 +43,14 @@ export class UserSongMenu{
     }
 
     showAllSong(){
-        console.log('-----Danh sách bài hát------')
+        console.log(`\x1b[2m -----Danh sách bài hát------\x1b[0m`)
         let songs = this.songManagement.getAll();
         for (let i = 0; i < songs.length; i++) {
-            console.log(`Id: ${songs[i].id},Tên bài hát: ${songs[i].name}\t Ca sĩ trình bày: ${songs[i].singer}\t Nhạc sĩ: ${songs[i].writer}\t Thể loại: ${songs[i].type}\t Ngày phát hành: ${songs[i].debuttime}`)
+            console.log(`Id: ${songs[i].id},Tên bài hát: ${songs[i].name}\t Ca sĩ trình bày: ${songs[i].singer}\t Nhạc sĩ: ${songs[i].writer}\t Thể loại: ${songs[i].type}\t Ngày phát hành: ${songs[i].debutTime}`)
         }
     }
 
-    addSongtoAlbum(currentUser: User){
+    addSongToAlbum(currentUser: User){
         console.log('-----Thêm bài hát vào album------')
         let songs = this.songManagement.getAll();
         let albums = this.albumsManagement.getAll();

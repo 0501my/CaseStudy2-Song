@@ -54,7 +54,7 @@ export class SongMenu{
         console.log('-------Danh sách bài hát--------')
         let songs = this.songManagement.getAll();
         for (let i = 0; i < songs.length; i++) {
-            console.log(`ID :${songs[i].id},Tên bài hát: ${songs[i].name}\t Ca sĩ thể hiện:${songs[i].singer}\t Nhạc sĩ:${songs[i].writer}\t Thể loại: ${songs[i].type}\t Ngày phát hành:${songs[i].debuttime}`)
+            console.log(`ID :${songs[i].id},Tên bài hát: ${songs[i].name}\t Ca sĩ thể hiện:${songs[i].singer}\t Nhạc sĩ:${songs[i].writer}\t Thể loại: ${songs[i].type}\t Ngày phát hành:${songs[i].debutTime}`)
         }
     }
 

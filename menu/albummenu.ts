@@ -8,8 +8,8 @@ enum albumChoice {
     ADD_NEW_ALBUM = 2,
     UPDATE_ALBUM= 3,
     DELETE_ALBUM = 4,
-    SHOW_SONGIN_ALBUM = 5,
-    ADD_ALBUMTO_USER = 6
+    SHOW_SONG_ALBUM = 5,
+    ADD_ALBUM_USER = 6
 }
 
 export class AlbumMenu{
@@ -45,11 +45,11 @@ export class AlbumMenu{
                     this.deleteAlbum()
                     break;
                 }
-                case albumChoice.SHOW_SONGIN_ALBUM:{
+                case albumChoice.SHOW_SONG_ALBUM:{
                     this.showSong()
                     break;
                 }
-                case albumChoice.ADD_ALBUMTO_USER:{
+                case albumChoice.ADD_ALBUM_USER:{
                     this.addAlbumToUser()
                     break;
                 }
@@ -95,7 +95,7 @@ export class AlbumMenu{
                     let album = this.albumsManagement.findByName(name);
                     if (album) {
                         for (let i = 0; i < album.song.length; i++) {
-                            console.log(`ID ${i+1},Tên bài hát: ${album.song[i].name}\t Ca sĩ trình bày :${album.song[i].singer}\t Nhạc sĩ sáng tác:${album.song[i].writer}\t Thể loại: ${album.song[i].type}\t Ngày phát hành:${album.song[i].debuttime}`);
+                            console.log(`ID ${i+1},Tên bài hát: ${album.song[i].name}\t Ca sĩ trình bày :${album.song[i].singer}\t Nhạc sĩ sáng tác:${album.song[i].writer}\t Thể loại: ${album.song[i].type}\t Ngày phát hành:${album.song[i].debutTime}`);
                         }
                     } else {
                         console.log('-----Album không tồn tại!-----');

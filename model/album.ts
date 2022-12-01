@@ -1,6 +1,4 @@
 import {Song} from '../model/song'
-import { SongManagement } from '../management/songmanagement';
-import * as rl from 'readline-sync'
 import { User } from './user';
 
 export class Albums {

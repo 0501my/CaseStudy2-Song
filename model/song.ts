@@ -6,14 +6,14 @@ export class Song{
     private _singer:string;
     private _writer:string;
     private _type:string;
-    private _debuttime:string;
+    private _debutTime:string;
     private _albums:Albums|null = null;
     constructor(name:string, singer:string, writer:string,type:string,debuttime:string){
         this._name = name;
         this._singer = singer;
         this._writer = writer;
         this._type = type;
-        this._debuttime = debuttime;
+        this._debutTime = debuttime;
         
     }
     set id(value:number){
@@ -46,11 +46,11 @@ export class Song{
     get writer():string{
         return this._writer;
     }
-    set debuttime(value:string){
-        this._debuttime = value;
+    set debutTime(value:string){
+        this._debutTime = value;
     }
-    get debuttime():string{
-        return this._debuttime;
+    get debutTime():string{
+        return this._debutTime;
     }
     set albums(value:Albums| null){
         this._albums = value;
