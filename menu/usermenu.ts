@@ -25,7 +25,7 @@ export class UserMenu{
             console.log('4. Xoá người dùng')
             console.log('5. Hiển thị album của người dùng')
             console.log('0. Thoát')
-            choice = +input.question('Mời nhập lựa chọn :  ')
+            choice = +input.question('Enter choice :  ')
             switch(choice) {
                 case userChoice.SHOW_ALL_USER:{
                     this.showAllUser()

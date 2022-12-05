@@ -20,7 +20,7 @@ export class AlbumMenu{
         let choice = -1;
         do{
             console.log('----Quản lý album----')
-            console.log('1. Hiển thị tất cả albums')
+            console.log('1. Hiển thị tất cả album')
             console.log('2. Thêm album mới')
             console.log('3. Chỉnh sửa album')
             console.log('4. Xoá album')

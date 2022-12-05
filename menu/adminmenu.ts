@@ -16,10 +16,10 @@ export class AdminMenu{
     run() {
         let choice = -1;
         do {
-            console.log('---Ứng dụng quản lý WEB NHAC---')
-            console.log('1. Quản lý bai hat')
-            console.log('2. Quản lý album nhac')
-            console.log('3. quan ly người dùng')
+            console.log('---Ứng dụng quản lý WEB NHẠC---')
+            console.log('1. Quản lý bài hát')
+            console.log('2. Quản lý album nhạc')
+            console.log('3. Quản lý người dùng')
             console.log('0. Đăng xuất')
             choice = +input.question('Enter choice:  ')
             switch (choice) {
