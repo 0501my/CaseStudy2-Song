@@ -1,58 +1,61 @@
-import { UserManagement } from "../management/usermanagement";
-import { User } from "../model/user";
+import {UserManagement} from "../management/usermanagement";
+import {User} from "../model/user";
 import * as input from "readline-sync";
-import { AdminMenu } from "./adminmenu";
-import{Role} from "../model/role";
-import { UserChoiceMenu } from "./userchoicemenu";
+import {AdminMenu} from "./adminmenu";
+import {Role} from "../model/role";
+import {UserChoiceMenu} from "./userchoicemenu";
 
 enum LoginChoice {
-    LOGIN=1,
-    REGISTER=2
+    LOGIN = 1,
+    REGISTER = 2
 }
-export class LoginMenu{
+
+export class LoginMenu {
     private userManagement = new UserManagement();
     private adminMenu = new AdminMenu();
     private userChoiceMenu = new UserChoiceMenu()
-    run(){
+
+    run() {
         let choice = -1;
-        do{
+        do {
             console.log("-----Chào mừng tới nhạc của tuiiiiiiii-------")
-        console.log("-----Vui lòng đăng nhập-----")
-        console.log("1. Đăng nhập")
-        console.log("2. Đăng ký")
-        console.log("0. Thoát")
-        choice = +input.question('Nhap lua chon cua ban :   ')
-        switch(choice) {
-            case LoginChoice.LOGIN:{
-                this.loginForm();
-                break;
+            console.log("-----Vui lòng đăng nhập-----")
+            console.log("1. Đăng nhập")
+            console.log("2. Đăng ký")
+            console.log("0. Thoát")
+            choice = +input.question('Nhap lua chon cua ban :   ')
+            switch (choice) {
+                case LoginChoice.LOGIN: {
+                    this.loginForm();
+                    break;
+                }
+                case LoginChoice.REGISTER: {
+                    this.registerForm();
+                    break;
+                }
             }
-            case LoginChoice.REGISTER:{
-                this.registerForm();
-                break;
-            }
-        }
-        }while(choice != 0)
-        
+        } while (choice != 0)
+
     }
-    loginForm(){
+
+    loginForm() {
         let username = input.question('Nhap tai khoan :  ');
         let password = input.question('Nhap mat khau :  ');
         let currentUser = this.userManagement.login(username, password);
-        if(currentUser != null ){
+        if (currentUser != null) {
             console.log('-----Đăng nhập thành công-----');
             if (currentUser.role == Role.ADMIN) {
                 this.adminMenu.run();
             } else {
-               this.userChoiceMenu.run(currentUser);
+                this.userChoiceMenu.run(currentUser);
             }
-         }  else {
+        } else {
             console.log('----Tài khoản hoặc mật khẩu không đúng!-----');
         }
-        
+
     }
 
-    registerForm(){
+    registerForm() {
         let user = this.inputUser();
         this.userManagement.createNew(user);
         console.log('---Đăng ký thành công!----')
@@ -65,8 +68,9 @@ export class LoginMenu{
         this.inputConfirmPassword(password);
         let name = input.question('Enter full Name:  ');
         let email = this.inputEmail();
-        return new User(name, email,username, password);
+        return new User(name, email, username, password);
     }
+
     inputEmail(): string {
         let email = '';
         let isValidEmail = true;
@@ -90,7 +94,8 @@ export class LoginMenu{
         } while (!isValidEmail);
         return email;
     }
-    inputUsername():string{
+
+    inputUsername(): string {
         let username = '';
         let isValidUsername = true;
         do {

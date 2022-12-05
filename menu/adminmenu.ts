@@ -1,14 +1,15 @@
 import * as input from 'readline-sync'
-import { SongMenu } from './songmenu'
-import { AlbumMenu } from './albummenu'
-import { UserMenu } from './usermenu'
+import {SongMenu} from './songmenu'
+import {AlbumMenu} from './albummenu'
+import {UserMenu} from './usermenu'
 
 enum AdminChoice {
     SONG_MANAGEMENT = 1,
     ALBUM_MANAGEMENT = 2,
     USER_MANAGEMENT = 3
 }
-export class AdminMenu{
+
+export class AdminMenu {
     private song = new SongMenu();
     private album = new AlbumMenu()
     private user = new UserMenu()
@@ -33,7 +34,7 @@ export class AdminMenu{
                     this.album.run()
                     break;
                 }
-                case AdminChoice.USER_MANAGEMENT:{
+                case AdminChoice.USER_MANAGEMENT: {
                     console.log('---Quản lý người dùng-----')
                     this.user.run()
                     break;

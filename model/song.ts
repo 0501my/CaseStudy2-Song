@@ -8,12 +8,12 @@ export class Song{
     private _type:string;
     private _debutTime:string;
     private _albums:Albums|null = null;
-    constructor(name:string, singer:string, writer:string,type:string,debuttime:string){
+    constructor(name:string, singer:string, writer:string,type:string,debutTime:string){
         this._name = name;
         this._singer = singer;
         this._writer = writer;
         this._type = type;
-        this._debutTime = debuttime;
+        this._debutTime = debutTime;
         
     }
     set id(value:number){
